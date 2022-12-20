@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title >Registration</title>
+    <style>
+      .container {
+        text-align : center;
+        width: 600px;
+        height: 600px;
+        margin: auto;
+        padding: 20px;
+        background-color: #d5cdcd;
+        position: fixed;
+        top: 100px;
+        left: 0;
+        right: 0;
+        display: inline-block;
+        }
+        .newsletter_input {
+            width: 80%;
+            height: 50px;
+            background: rgba(255,255,255,0.5);
+            border: none;
+            outline: none;
+            padding-left: 22px;
+            padding-right: 22px;
+            color: #0a0a0a;
+        }
+
+       .space{
+            display: block;
+            font-size: 1em;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            margin-left: 0;
+            margin-right: 0;
+            font-weight: lighter;
+            font-style: italic;
+            color: red;}
+
+        .newsletter_button {
+            width: 161px;
+            height: 50px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.5);
+            font-family: 'Oswald', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            }
+ </style>
+</head>
+<body>
+
+
+<form method="post" action=" ">
+    {% csrf_token %}
+  <div class="container">
+      <h1 style="text-align:center;"> Register Here !</h1>
+        {% if messages %}
+      {% for each in messages %}
+      <div class="space">{{each}} </div>
+      {% endfor %}
+      {% else %}
+      <div class="space"> </div>
+      {% endif %}
+      <div>
+        <input  type="text" name="firstname" placeholder="First Name" class="newsletter_input">
+       </div>
+      <div class="space"> </div>
+      <div>
+        <input  type="text" name="lastname" placeholder="Last Name" class="newsletter_input">
+       </div>
+
+      <div>
+          <div class="space"> </div>
+        <input class="newsletter_input" type="text" name="username" placeholder="User name">
+      </div>
+      <div>
+        <div class="space"> </div>
+        <input class="newsletter_input" type="email" name="email_id" placeholder="Email">
+       </div>
+      <div>
+        <div class="space"> </div>
+        <input class="newsletter_input" type="password" name="password" placeholder="Password">
+      </div>
+      <div>
+        <div class="space"> </div>
+        <input class="newsletter_input" type="password" name="confirm_password" placeholder=" Confirm Password">
+      </div>
+        <div class="space"> </div>
+      <div >
+        <input type="submit" name="submit" value="Resister" class="newsletter_button" >
+      </div>
+  </div>
+
+</form>
+
+
+</body>
+</html>
